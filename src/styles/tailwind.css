@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FAFAFA; /* warm off-white */
+    --color-foreground: #1E293B; /* deep charcoal */
+    --color-border: rgba(148, 163, 184, 0.2); /* subtle gray border */
+    --color-input: #FFFFFF; /* pure white */
+    --color-ring: #2563EB; /* professional blue */
+    
+    /* Surface Colors */
+    --color-card: #FFFFFF; /* pure white */
+    --color-card-foreground: #1E293B; /* deep charcoal */
+    --color-popover: #FFFFFF; /* pure white */
+    --color-popover-foreground: #1E293B; /* deep charcoal */
+    
+    /* Muted Colors */
+    --color-muted: #F8FAFC; /* light gray */
+    --color-muted-foreground: #64748B; /* medium gray */
+    
+    /* Primary Colors */
+    --color-primary: #2563EB; /* professional blue */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #64748B; /* sophisticated slate gray */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #059669; /* success-oriented emerald */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #059669; /* emerald green */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #D97706; /* amber orange */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error/Destructive Colors */
+    --color-error: #DC2626; /* clear red */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* clear red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Text Colors */
+    --color-text-primary: #1E293B; /* deep charcoal */
+    --color-text-secondary: #64748B; /* medium gray */
+    
+    /* Surface Specific */
+    --color-surface: #FFFFFF; /* pure white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body, p, span, div {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Animation utilities */
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+  
+  /* Micro-interaction utilities */
+  .hover-scale {
+    transition: transform 150ms ease-out;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Focus utilities */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+  
+  /* Elevation system */
+  .elevation-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .elevation-2 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .elevation-3 {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+}
